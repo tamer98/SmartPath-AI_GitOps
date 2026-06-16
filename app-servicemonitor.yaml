@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: app-servicemonitor
+spec:
+  selector:
+    matchLabels:
+      app: path-finder-ai
+  endpoints:
+  - port: http
+    interval: 15s
+    scrapeTimeout: 14s
+

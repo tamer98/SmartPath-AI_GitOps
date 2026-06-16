@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: path-finder-ai-ingress
+  namespace: application
+spec:
+  rules:
+  - host: path-finder.ddnsking.com  
+    http:
+      paths:
+      - backend:
+          service:
+            name: path-finder-ai-service
+            port:
+              number: 80  
+        path: /
+        pathType: Prefix

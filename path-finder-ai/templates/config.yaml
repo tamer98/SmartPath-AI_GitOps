@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: path-finder-ai-config
+data:
+  LOG_LEVEL: "debug"
+  PERSISTENCE: "true"

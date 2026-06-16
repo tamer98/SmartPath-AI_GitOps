@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: path-finder-ai-deployment
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+    spec:
+      containers:
+        - name: path-finder-ai-container
+          image: tamer98/path-finder-ai:v1.0.0 
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: path-finder-ai-config
+            - secretRef:
+                name: path-finder-ai-secret

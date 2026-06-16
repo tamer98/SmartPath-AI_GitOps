@@ -1,0 +1,23 @@
+global:
+  storageClass: ebs-gp3
+
+architecture: replicaset
+useStatefulSet: true
+
+replicaCount: 2
+
+auth:
+  enabled: true
+  rootPassword: "schbiS4TcT"
+
+persistence:
+  enabled: true
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
