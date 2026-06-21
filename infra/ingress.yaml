@@ -10,7 +10,7 @@ spec:
       paths:
       - backend:
           service:
-            name: path-finder-ai-service
+            name: application-service
             port:
               number: 80  
         path: /
