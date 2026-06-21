@@ -4,4 +4,4 @@ mongodb:
 serviceMonitor:
   enabled: true
   additionalLabels:
-    release: "kube-prometheus-stack"
+    release: kube-prometheus-stack
