@@ -3,7 +3,7 @@ kind: ServiceMonitor
 metadata:
   name: app-servicemonitor
   labels:
-  release: kube-prometheus-stack
+   release: kube-prometheus-stack
 spec:
   selector:
     matchLabels:
