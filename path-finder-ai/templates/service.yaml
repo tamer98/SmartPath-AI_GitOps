@@ -11,4 +11,11 @@ spec:
     app: path-finder-ai
   ports:
     - name: http 
-      protocol: 
+      protocol: TCP
+      port: 80
+      targetPort: 3000      
+
+      
+
+
+
