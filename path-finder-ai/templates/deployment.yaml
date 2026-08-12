@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: path-finder-ai-container
-          image: tamer98/path-finder-ai:v1.0.0 
+          image: tamer98/path-finder-ai:v2.0.0 
           ports:
             - containerPort: 3000
           envFrom:
