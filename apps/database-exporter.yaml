@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongodb-exporter
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  project: default
+  source:
+    - repoURL: https://prometheus-community.github.io/helm-charts
+      chart: prometheus-mongodb-exporter
+      targetRevision: "3.22.0"
+      helm:
+        valueFiles:
+          - $values/monitoring/mongodb-values.yaml #mongodb-values.yaml
+    - repoURL: https://github.com/tamer98/SmartPath-AI_GitOps.git 
+      targetRevision: HEAD
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

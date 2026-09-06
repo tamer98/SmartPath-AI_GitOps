@@ -2,13 +2,13 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: app-servicemonitor
-  namespace: monitoring
+  # namespace: monitoring
   labels:
    release: kube-prometheus-stack
 spec:
-  namespaceSelector:
-    matchNames:
-      - application
+  # namespaceSelector:
+  #   matchNames:
+  #     - application
   selector:
     matchLabels:
       app: path-finder-ai

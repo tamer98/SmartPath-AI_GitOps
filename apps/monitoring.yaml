@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mongodb
+  name: kube-prometheus-stack
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "6"
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   project: default
   source:
     repoURL: https://github.com/tamer98/SmartPath-AI_GitOps.git 
     targetRevision: HEAD
-    path: database/mongodb
+    path: monitoring/kube-prometheus-stack
     helm:
       valueFiles:
-        - ../dbvalues.yaml
+        - ../prometheus-stack-values.yaml
   destination:
-    server: "https://kubernetes.default.svc"
-    namespace: mongodb
+    server: https://kubernetes.default.svc
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
