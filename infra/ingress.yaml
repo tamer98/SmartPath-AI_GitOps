@@ -4,6 +4,7 @@ metadata:
   name: path-finder-ai-ingress
   namespace: application
 spec:
+  ingressClassName: nginx
   rules:
   - host: path-finder.ddnsking.com  
     http:
