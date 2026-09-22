@@ -1,3 +1,6 @@
 appName: path-finder-ai
 
+image:
+  repository: 569870184857.dkr.ecr.ap-south-1.amazonaws.com/development/path-finder
+  tag: v1.0.0
 
